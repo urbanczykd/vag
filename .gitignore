@@ -1,0 +1,9 @@
+.bundle
+db/*.sqlite3
+log/*.log
+tmp/**/*
+.redcar/**/*
+.redcar/**
+.redcar/tags
+public/gallery/**/*
+config/database.yml
