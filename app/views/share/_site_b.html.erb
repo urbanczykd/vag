@@ -1,0 +1,97 @@
+<!-- contentbox-->
+	<div class="contentbox">
+		<div class="contentbox_top">
+			<div class="contentbox_top_left"></div>
+			<div class="contentbox_top_center">Login:&nbsp;
+      <%# if current_user.nil?%>
+					<%# else %>
+						<%#= current_user.username %>
+				<%# end %>
+			</div>
+			<div class="contentbox_top_right"></div>
+		</div>
+
+		<div class="contentbox_left">
+			<div class="contentbox_right">
+				<div class="contentbox_center">
+<%#=    render :partial => "main/login" %>
+					</div>
+			</div>
+		</div>
+
+		<div class="contentbox_down">
+			<div class="contentbox_down_left"></div>
+			<div class="contentbox_down_center"></div>
+			<div class="contentbox_down_right"></div>
+		</div>
+	</div>
+<!-- contentbox! -->
+<br />
+	<div class="contentbox">
+		<div class="contentbox_top">
+			<div class="contentbox_top_left"></div>
+			<div class="contentbox_top_center">Shoutbox TOP</div>
+			<div class="contentbox_top_right"></div>
+		</div>
+
+		<div class="contentbox_left">
+			<div class="contentbox_right">
+				<div class="contentbox_center">
+<%#= render :partial => "main/shoutboxtop" %>
+				</div>
+			</div>
+		</div>
+
+		<div class="contentbox_down">
+			<div class="contentbox_down_left"></div>
+			<div class="contentbox_down_center"></div>
+			<div class="contentbox_down_right"></div>
+		</div>
+	</div>
+<!-- contentbox! -->
+<br />
+	<div class="contentbox">
+		<div class="contentbox_top">
+			<div class="contentbox_top_left"></div>
+			<div class="contentbox_top_center">Users on-line</div>
+			<div class="contentbox_top_right"></div>
+		</div>
+
+		<div class="contentbox_left">
+			<div class="contentbox_right">
+				<div class="contentbox_center">
+<%#= render :partial => "main/on_line" %>
+				</div>
+			</div>
+		</div>
+
+		<div class="contentbox_down">
+			<div class="contentbox_down_left"></div>
+			<div class="contentbox_down_center"></div>
+			<div class="contentbox_down_right"></div>
+		</div>
+	</div>
+<!-- contentbox! -->
+<br />
+	<div class="contentbox">
+		<div class="contentbox_top">
+			<div class="contentbox_top_left"></div>
+			<div class="contentbox_top_center">Shoutbox</div>
+			<div class="contentbox_top_right"></div>
+		</div>
+		<div class="contentbox_left">
+			<div class="contentbox_right">
+				<div id="shoutbox_center">
+<%#= render :partial => "main/shoutbox" %>
+
+				</div>
+			</div>
+		</div>
+
+		<div class="contentbox_down">
+			<div class="contentbox_down_left"></div>
+			<div class="contentbox_down_center"></div>
+			<div class="contentbox_down_right"></div>
+		</div>
+	</div>
+

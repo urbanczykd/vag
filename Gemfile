@@ -6,7 +6,11 @@ gem 'rails', '3.0.3'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'mysql2'
-
+gem 'jquery-rails'
+#gem 'authlogic'
+gem 'authlogic', :git => 'https://github.com/odorcicd/authlogic.git', :branch => 'rails3' 
+gem 'acts_as_list'
+gem 'paperclip'
 # Use unicorn as the web server
 # gem 'unicorn'
 

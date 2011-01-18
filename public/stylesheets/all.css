@@ -1,0 +1,67 @@
+.contentbox ul{
+font-family: verdana, arial, helvetica, sans-serif;
+font-size:   12px;
+line-height: 18px;
+color: #B7B9AC;
+list-style-image:url('/images/main/bullet.gif');
+}
+.contentbox a:hover{
+color:#4985F4;
+text-decoration:none;
+}
+.contentbox a{
+color: #B7B9AC;
+text-decoration:none;
+}
+#vericalmenu a:hover{
+color:#4985F4;
+text-decoration:none;
+}
+#vericalmenu a{
+color: #B7B9AC;
+text-decoration:none;
+}
+#rejestracja{
+padding: 15px;
+}
+#shoutbox_center input{
+color: #B7B9AC;
+width: 160px;
+font-size: 12px;
+float: left;
+}
+.contentbox_center input{
+color: #B7B9AC;
+width: 160px;
+font-size: 12px;
+float: left;
+}
+.webmessage_username{
+float:left;
+color: #986700;
+}
+.webmessage_webmessage{
+clear: both;
+color: #B7B9AC;
+}
+.top_box_left{
+display: inline;
+color: #986700;
+text-align: left;
+}
+.top_box_right{
+display: inline;
+color: #B7B9AC;
+text-align: right;
+float: right;
+}
+#shoutbox_center{
+width: 168px;
+background-color: #040404;
+margin-top: -12px;
+margin-bottom: -12px;
+}
+
+/**/
+
+

@@ -1,0 +1,25 @@
+<div class="box">
+
+<% if current_user %>
+<% form_for :webmessage, :url => {:controller => "webmessages", :action => "create"} do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.hidden_field :username, :value => current_user.username %>
+  </p>
+  <p>
+    <%= f.label :wiadomość %><br />
+    <%= f.text_field :message %>
+  </p>
+  <p>
+    <%= f.submit 'Dodaj' %>
+  </p>
+<% end %>
+<br /><br /><br />
+
+<% end %>
+	<% @Webmessages.each do |webmessage| %>
+		<div class="webmessage_username"><%= webmessage.username %>&nbsp;:&nbsp;&nbsp;</div>
+		<div class="webmessage_webmessage"><%= webmessage.message %></div>
+	<% end %>
+</div>
+
