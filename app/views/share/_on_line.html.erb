@@ -1,9 +1,9 @@
 <div class="box">
-<% @User.each do |user| %>
-	<div class="box_left"><%= user.username %></div>
+<%# @User.each do |user| %>
+	<div class="box_left"><%# user.username %></div>
 	<div class="box_right">
-		<%= distance_of_time_in_words_to_now(user.last_request_at) %>
+		<%# distance_of_time_in_words_to_now(user.last_request_at) %>
 </div>
 	<br />
-<% end %>
+<%# end %>
 </div>

@@ -1,8 +1,8 @@
 			<% if current_user %>
 				<ul>
-				<li><%= link_to "Moje galerie", "/users/current/cargalleries" %></li>
-				<li><%= link_to "Edytuj profil", edit_user_path(:current) %></li>
-				<li><%= link_to "Logout", logout_path %></li>
+				<li><%# link_to "Moje galerie", "/users/current/cargalleries" %></li>
+				<li><%# link_to "Edytuj profil", edit_user_path(:current) %></li>
+				<li><%# link_to "Logout", logout_path %></li>
 				</ul>
 			<% else %>
 <% form_for :user_session, :url => {:controller => "user_sessions", :action => "create"} do |f| %>

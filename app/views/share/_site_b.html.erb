@@ -3,10 +3,10 @@
 		<div class="contentbox_top">
 			<div class="contentbox_top_left"></div>
 			<div class="contentbox_top_center">Login:&nbsp;
-      <%# if current_user.nil?%>
-					<%# else %>
-						<%#= current_user.username %>
-				<%# end %>
+      <% if current_user.nil?%>
+					<% else %>
+						<%= current_user.username %>
+				<% end %>
 			</div>
 			<div class="contentbox_top_right"></div>
 		</div>
@@ -14,7 +14,7 @@
 		<div class="contentbox_left">
 			<div class="contentbox_right">
 				<div class="contentbox_center">
-<%#=    render :partial => "main/login" %>
+<%=    render :partial => "share/login" %>
 					</div>
 			</div>
 		</div>
@@ -37,7 +37,7 @@
 		<div class="contentbox_left">
 			<div class="contentbox_right">
 				<div class="contentbox_center">
-<%#= render :partial => "main/shoutboxtop" %>
+<%= render :partial => "share/shoutboxtop" %>
 				</div>
 			</div>
 		</div>
@@ -60,7 +60,7 @@
 		<div class="contentbox_left">
 			<div class="contentbox_right">
 				<div class="contentbox_center">
-<%#= render :partial => "main/on_line" %>
+<%= render :partial => "share/on_line" %>
 				</div>
 			</div>
 		</div>
@@ -82,7 +82,7 @@
 		<div class="contentbox_left">
 			<div class="contentbox_right">
 				<div id="shoutbox_center">
-<%#= render :partial => "main/shoutbox" %>
+<%= render :partial => "share/shoutbox" %>
 
 				</div>
 			</div>
