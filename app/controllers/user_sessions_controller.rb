@@ -8,7 +8,7 @@ class UserSessionsController < ApplicationController
   def create
     @user_session = UserSession.new(params[:user_session])
       if @user_session.save
-          redirect_to admin_path
+          redirect_to root_path
         elsif
         render :action => 'new'
       end

@@ -1,21 +1,20 @@
-			<% if current_user %>
+<% if current_user %>
 				<ul>
 				<li><%# link_to "Moje galerie", "/users/current/cargalleries" %></li>
 				<li><%# link_to "Edytuj profil", edit_user_path(:current) %></li>
-				<li><%# link_to "Logout", logout_path %></li>
+				<li><%= link_to "Logout", logout_path %></li>
 				</ul>
-			<% else %>
-<% form_for :user_session, :url => {:controller => "user_sessions", :action => "create"} do |f| %>
-  <%= f.error_messages %>
+<% else %>
+   <%= form_for @user_session do |f| %>
     Login:<br />
     <%= f.text_field :username %><br />
     Hasło:<br />
     <%= f.password_field :password %>
-<%= f.submit "Zaloguj" %>
+    <%= f.submit "Zaloguj" %>
 <% end %>
 <br /><br />
 <ul>
-<li><%= link_to "Rejestracja", new_user_path, :class => "showmessage" %></li>
+<li><%= link_to "Rejestracja", register_path, :class => "showmessage" %></li>
 </ul>
 			<% end %>
 
