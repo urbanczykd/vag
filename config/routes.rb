@@ -6,7 +6,11 @@ Vag::Application.routes.draw do
   #   match 'products/:id' => 'catalog#view'
   # Keep in mind you can assign values other than :controller and :action
   resources :user_sessions, :only =>[:new, :create, :destroy]
-  resources :users, :only => [:new, :create, :show]
+  resources :users, :only => [:index, :new, :create, :show]
+  resources :articles, :only => [:index]
+#  match 'users' => "User#index", :as => "users"
+#  match 'users/(:id)' => "User#show", :as => "user"
+
   # Sample of named route:
   #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase
   # This route can be invoked with purchase_url(:id => product.id)
@@ -18,7 +22,10 @@ match "admin", :to => "Admin#index", :as => "admin"
 	match "logout", :to => "User_sessions#destroy", :as => "logout"
   match "register", :to => "Users#new", :as => "register"
    namespace :admin do
+    resources :users
+    resources :articles
   end
+#  match "users", :to => "User#index", :as => "users"
   # Sample resource route with options:
   #   resources :products do
   #     member do

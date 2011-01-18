@@ -10,7 +10,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110118120423) do
+ActiveRecord::Schema.define(:version => 20110118131934) do
+
+  create_table "articles", :force => true do |t|
+    t.string   "title"
+    t.string   "tag"
+    t.text     "head"
+    t.text     "body"
+    t.integer  "position"
+    t.boolean  "publish"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "user_sessions", :force => true do |t|
     t.datetime "created_at"

@@ -12,15 +12,14 @@
 		<div class="mainbox_left">
 			<div class="mainbox_right">
 				<div class="mainbox_center">
-<%= form_for @user_session do |f| %>
-      <%= f.label :username %><br />
-      <%= f.text_field :username %>
-    <p>
-      <%= f.label :password %><br />
-      <%= f.text_field :password %>
-    </p>
-    <%= f.submit "Login" %>
-<% end %>
+
+
+        <% @users.each do |user| %>
+        <%= link_to user.username, user_path(user) %><br />
+        <% end %>
+
+
+
       </div>
 			</div>
 		</div>
@@ -39,4 +38,3 @@
 <div id="footer_inside">
 	<%= render :partial => "share/footer_inside" %>
 </div>
-
