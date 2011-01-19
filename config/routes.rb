@@ -7,12 +7,9 @@ Vag::Application.routes.draw do
   # Keep in mind you can assign values other than :controller and :action
   resources :user_sessions, :only =>[:new, :create, :destroy]
   resources :users, :only => [:index, :new, :create, :show, :edit]
-  resources :articles, :only => [:index]
-  get '/:id' => "articles#show", :as => "article"
+#  resources :articles, :only => [:index]
   resources :sbmessages, :only => [:new, :create]
-  match 'user/(:id)' => "Users#show", :as => "user"
-#  match 'users' => "User#index", :as => "users"
-#  match 'users/(:id)' => "User#show", :as => "user"
+  match 'user/:user_id' => 'Users#show', :as => 'user'
 
   # Sample of named route:
   #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase
@@ -20,16 +17,19 @@ Vag::Application.routes.draw do
 
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
-  get "admin", :to => "admin#index", :as => "admin"      
-  get "login", :to => "user_sessions#new", :as => "login"
-	get "logout", :to => "user_sessions#destroy", :as => "logout"
-  get "register", :to => "users#new", :as => "register"
+  match 'admin', :to => 'Admin#index', :as => 'admin'      
+  get 'login', :to => 'User_sessions#new', :as => 'login'
+	match 'logout', :to => 'User_sessions#destroy', :as => 'logout'
+  get 'register', :to => 'Users#new', :as => 'register'
   
    namespace :admin do
     resources :users
-    resources :articles
+    resources :articles do
+    get "act(/:art_act)", :to => "Articles#act", :as => "act"
+    end
     resources :sbmessages
   end
+
 #  match "users", :to => "User#index", :as => "users"
   # Sample resource route with options:
   #   resources :products do
@@ -66,7 +66,8 @@ Vag::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-   root :to => "home#index"
+   match ':article' => 'Articles#show', :as => 'article'
+   root :to => "Home#index"
 
   # See how all your routes lay out with "rake routes"
 

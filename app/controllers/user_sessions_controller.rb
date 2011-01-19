@@ -3,6 +3,7 @@ class UserSessionsController < ApplicationController
 
   def new
     @user_session = UserSession.new
+    
   end
   
   def create
@@ -15,7 +16,8 @@ class UserSessionsController < ApplicationController
   end
   
   def destroy
-    @user_session = UserSession.find
+#    return render :text => "params => #{params.to_yaml}"
+    @user_session = UserSession.find(params[:id])
     @user_session.destroy
     flash[:notice] = "Successfully logged out."
     redirect_to root_url

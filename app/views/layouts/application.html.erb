@@ -29,11 +29,13 @@
 			<div id="frame2_left">
   				<div id="frame2_right">
     				<div id="frame2_center">
-<div id="site-a">
+<div id="site-a" style="float:left;">
 	<%= render :partial => "share/site_a" %>
 </div>
+<div id="main">
             <%= yield %>
-<div id="site-b">
+</div>
+<div id="site-b" style="float:right;">
 	<%= render :partial => "share/site_b" %>
 </div>
 <div id="footer_inside">

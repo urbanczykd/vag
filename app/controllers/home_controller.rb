@@ -1,7 +1,7 @@
 class HomeController < ApplicationController
 
   def index
-    @articles = Article.all(:order => :position)
+    @articles = Article.all(:order => :position, :conditions =>{:publish => true})
     @user_session = UserSession.new
     @users_online = User.find(:all, :order => 'last_request_at DESC', :limit => 10)
     @sbmessages = Sbmessage.all(:order => 'created_at DESC', :limit => 20)

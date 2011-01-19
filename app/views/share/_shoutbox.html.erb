@@ -10,8 +10,8 @@
     <%= f.submit 'Dodaj' %>
   </p>
 <% end %>
+<br /><br />
 <% end %>
-<br /><br /><br />
 
 <% @sbmessages.each do |message| %>
 		<div class="webmessage_username"><%= User.find(message.user_id).username %>&nbsp;:&nbsp;&nbsp;

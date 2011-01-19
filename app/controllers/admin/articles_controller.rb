@@ -29,4 +29,35 @@ class Admin::ArticlesController < AdminController
     @article.destroy
     redirect_to admin_articles_path
   end
+  ##
+  def act 
+    @article = Article.find(params[:article_id])
+    if (params[:art_act] == "true" || params[:art_act] == "false")
+      respond_to do |format|
+          if @article.update_attributes(:publish => params[:art_act])
+            format.html {redirect_to(admin_articles_url)}        
+          else
+            format.html {redirect_to(admin_articles_url)}
+          end
+        end 
+    elsif params[:art_act] == "up"
+      respond_to do |format|
+          if @article.move_higher
+            format.html {redirect_to(admin_articles_url)}
+          else
+            format.html {redirect_to(admin_articles_url)}
+          end
+      end
+    elsif params[:art_act] == "down"
+      respond_to do |format|
+          if @article.move_lower
+            format.html {redirect_to(admin_articles_url)}
+          else
+            format.html {redirect_to(admin_articles_url)}
+          end
+      end
+    end
+  end
+
+  ##
 end
