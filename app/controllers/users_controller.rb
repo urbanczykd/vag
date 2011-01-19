@@ -11,6 +11,10 @@ class UsersController < ApplicationController
   
   def show
     @user = User.find_by_username(params[:id])
+    @users_online = User.find(:all, :order => 'last_request_at DESC', :limit => 10)
+    @sbmessagesTOP = Sbmessage.all(:select => 'user_id, count(message) as top', :group => "user_id", :order => "top DESC", :limit => 5)
+    @sbmessages = Sbmessage.all(:order => 'created_at DESC', :limit => 20)
+
   end
   
   def create

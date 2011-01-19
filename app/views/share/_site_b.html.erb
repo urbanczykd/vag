@@ -3,9 +3,8 @@
 		<div class="contentbox_top">
 			<div class="contentbox_top_left"></div>
 			<div class="contentbox_top_center">Login:&nbsp;
-      <% if current_user.nil?%>
-					<% else %>
-						<%= current_user.username %>
+      <% if current_user %>
+						<%= link_to current_user.username, user_path(current_user.username) %>
 				<% end %>
 			</div>
 			<div class="contentbox_top_right"></div>

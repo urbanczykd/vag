@@ -31,10 +31,51 @@ font-size: 12px;
 float: left;
 }
 .contentbox_center input{
-color: #B7B9AC;
-width: 160px;
-font-size: 12px;
+border: 1px;
+width: 165px;
+font-size: 14px;
 float: left;
+background-color: #B7B9AC;
+  -webkit-border-radius: 5px; /* Safari, Chrome */
+  -khtml-border-radius: 5px;    /* Konqueror */
+  -moz-border-radius: 5px; /* Firefox */
+  border-radius: 5px;
+}
+#user_session_submit{
+margin: 4px 0px 0px 0px;
+border: 1px;
+width: 165px;
+font-size: 14px;
+float: left;
+background-color: #594940;
+  -webkit-border-radius: 2px; /* Safari, Chrome */
+  -khtml-border-radius: 2px;    /* Konqueror */
+  -moz-border-radius: 2px; /* Firefox */
+  border-radius: 2px;
+
+}
+#shoutbox_center input{
+border: 1px;
+width: 165px;
+font-size: 14px;
+float: left;
+  -webkit-border-radius: 5px; /* Safari, Chrome */
+  -khtml-border-radius: 5px;    /* Konqueror */
+  -moz-border-radius: 5px; /* Firefox */
+  border-radius: 5px;
+}
+#sbmessage_submit{
+margin: 4px 0px 0px 0px;
+border: 1px;
+width: 165px;
+font-size: 14px;
+float: left;
+background-color: #594940;
+  -webkit-border-radius: 2px; /* Safari, Chrome */
+  -khtml-border-radius: 2px;    /* Konqueror */
+  -moz-border-radius: 2px; /* Firefox */
+  border-radius: 2px;
+
 }
 .webmessage_username{
 float:left;

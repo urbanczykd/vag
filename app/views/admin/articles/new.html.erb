@@ -1,0 +1,13 @@
+<%= form_for [:admin, @article] do |f| %>
+
+<%= f.label :tytuł %>:<br />
+<%= f.text_field :title %><br />
+<%= f.label :tagi %>:<br />
+<%= f.text_field :tag %><br />
+<%= f.label :zajawka %>:<br />
+<%= f.text_area :head %><br />
+<%= f.label :treść %>:<br />
+<%= f.text_area :body %><br />
+<%= f.submit %>
+
+<% end %>

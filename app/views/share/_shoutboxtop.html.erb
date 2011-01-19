@@ -1,8 +1,8 @@
 <div class="box">
-<%# @WebmessagesTOP.each do |top|%>
-	<div class="top_box_left"><%# top.username%>:</div>
-	<div class="top_box_right"><%# top.dupa %></div><br />
-<%# end %>
+<% @sbmessagesTOP.each do |toplist|%>
+	<div class="top_box_left"><%= User.find(toplist.user_id).username%>:</div>
+	<div class="top_box_right"><%= toplist.top %></div><br />
+<% end %>
 </div>
 
 

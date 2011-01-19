@@ -1,0 +1,12 @@
+<% form_for [:admin, @sbmessage] do |f| %>
+
+  <%# f.text_field :user_id%>
+<p>
+  <%= f.label :treść %>:<br />
+  <%= f.text_field :message %>
+</p>
+<p>
+<%= f.submit "Aktualizuj"%>
+</p>
+<br /><br />
+<% end %>

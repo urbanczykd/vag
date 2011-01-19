@@ -1,0 +1,50 @@
+<div id="site-a">
+	<%= render :partial => "share/site_a" %>
+</div>
+<div id="main">
+	<div class="mainbox">
+		<div class="mainbox_top">
+			<div class="mainbox_top_left"></div>
+			<div class="mainbox_top_center"></div>
+			<div class="mainbox_top_right"></div>
+		</div>
+
+		<div class="mainbox_left">
+			<div class="mainbox_right">
+				<div class="mainbox_center">
+<%= form_for(@user) do |f| %>
+    <%= f.label :username %>:<br />
+    <%= f.text_field :username %>
+  <p>
+    <%= f.label :email %>:<br />
+    <%= f.text_field :email %>
+  </p>
+  <p>
+    <%= f.label :password %>:<br />
+    <%= f.text_field :password %>
+  </p>
+  <p>
+    <%= f.label :password_confirmation %>:<br />
+    <%= f.text_field :password_confirmation %>
+  </p>
+    
+    <%= f.submit "Aktualizuj" %>
+<% end %>
+      </div>
+			</div>
+		</div>
+
+		<div class="mainbox_down">
+			<div class="mainbox_down_left"></div>
+			<div class="mainbox_down_center"></div>
+			<div class="mainbox_down_right"></div>
+		</div>
+	</div>
+</div>
+
+<div id="site-b">
+	<%= render :partial => "share/site_b" %>
+</div>
+<div id="footer_inside">
+	<%= render :partial => "share/footer_inside" %>
+</div>

@@ -1,20 +1,19 @@
+
 <!-- contentbox-->
 	<div class="contentbox">
 		<div class="contentbox_top">
 			<div class="contentbox_top_left"></div>
-			<div class="contentbox_top_center">Nawigacja</div>
+			<div class="contentbox_top_center">Admin Nawigacja</div>
 			<div class="contentbox_top_right"></div>
 		</div>
 		<div class="contentbox_left">
 			<div class="contentbox_right">
 				<div class="contentbox_center">
 				<ul>
-					<li><%= link_to "Strona główna", root_path %></li>
-					<li>Nasze samochody</li>
-					<li>Galeria</li>
-					<li>Artykuly</li>
-					<li>Szukaj</li>
-					<li>Kontakt</li>
+					<li><%= link_to "Panel administracyjny", admin_path %></li>
+					<li><%= link_to "Artykuły", admin_articles_path %></li>
+					<li><%= link_to "Shoutbox", admin_sbmessages_path %></li>
+					<li><%= link_to "Użytkownicy", admin_users_path %></li>
 				</ul>
 				</div>
 			</div>
@@ -25,6 +24,6 @@
 			<div class="contentbox_down_center"></div>
 			<div class="contentbox_down_right"></div>
 		</div>
-	</div>
+ </div>
 <!-- contentbox! -->
 <br />

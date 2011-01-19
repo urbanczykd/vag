@@ -4,10 +4,16 @@ body {
 }
 body, p, ol, td {
 font-family: verdana, arial, helvetica, sans-serif;
-font-size:   12px;
+font-size:   14px;
 line-height: 18px;
 color: white;
 }
+table{ font-family: verdana, arial, helvetica, sans-serif;
+font-size:   16px;}
+table th{font-size: 14px; }
+a {color: #B7B9AC;}
+a:hover{color: red;}
+
 #frame {
 margin-left: auto;
 margin-right: auto;
@@ -17,8 +23,8 @@ width: 988px;
 #baner {
 width: 988px;
 height: 335px;
-	background:url('/images/main/baner.jpg');
-	background-repeat: no-repeat;
+background:url('/images/main/baner.jpg');
+background-repeat: no-repeat;
 }
 /* verical_menu */
 #vericalmenu{
@@ -117,7 +123,7 @@ float: right;
 .contentbox{
 display: block;
 margin-left: 5px;
-background:url('/images/main/darkSilverFooter_05.gif');
+background:url('/images/main/darkSilver_05.gif');
 background-repeat: repeat-y;
 width: 200px;
 }
@@ -191,7 +197,7 @@ display: block;
 margin-left: 3px;
 background:url('/images/main/darkSilverFooter_05.gif');
 background-repeat: repeat-y;
-width: 531px;
+width: 731px;
 }
 .mainbox_top{
 height: 50px;
@@ -204,15 +210,9 @@ float: left;
 }
 .mainbox_top_center{
 height: 50px;
-width: 471px;
+width: 671px;
 background:url('/images/main/darkSilverHeader_03.gif');
-display: inline;
-color: #B7B9AC;
 float: left;
-line-height: 32px;
-font-family: Verdana, Helvetica;
-font-size: 14px;
-text-align: left;
 }
 .mainbox_top_right{
 height: 50px;
@@ -226,7 +226,7 @@ background:url('/images/main/darkSilverFooter_05.gif');
 background-repeat: repeat-y;
 }
 .mainbox_center{
-width: 499px;
+width: 699px;
 background-color: #040404;
 }
 .mainbox_right{
@@ -244,7 +244,7 @@ float: left;
 }
 .mainbox_down_center{
 height: 13px;
-width: 499px;
+width: 699px;
 background-image:url('/images/main/darkSilverFooter_02.gif');
 float: left;
 }
@@ -276,6 +276,7 @@ width: 536px;
 #footer_inside{
 text-align: center;
 clear: both;
+font-size: 12px;
 }
 /*start boxes*/
 .box{

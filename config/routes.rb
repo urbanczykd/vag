@@ -6,8 +6,11 @@ Vag::Application.routes.draw do
   #   match 'products/:id' => 'catalog#view'
   # Keep in mind you can assign values other than :controller and :action
   resources :user_sessions, :only =>[:new, :create, :destroy]
-  resources :users, :only => [:index, :new, :create, :show]
+  resources :users, :only => [:index, :new, :create, :show, :edit]
   resources :articles, :only => [:index]
+  get '/:id' => "articles#show", :as => "article"
+  resources :sbmessages, :only => [:new, :create]
+  match 'user/(:id)' => "Users#show", :as => "user"
 #  match 'users' => "User#index", :as => "users"
 #  match 'users/(:id)' => "User#show", :as => "user"
 
@@ -17,13 +20,15 @@ Vag::Application.routes.draw do
 
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
-match "admin", :to => "Admin#index", :as => "admin"      
-  match "login", :to => "User_sessions#new", :as => "login"
-	match "logout", :to => "User_sessions#destroy", :as => "logout"
-  match "register", :to => "Users#new", :as => "register"
+  get "admin", :to => "admin#index", :as => "admin"      
+  get "login", :to => "user_sessions#new", :as => "login"
+	get "logout", :to => "user_sessions#destroy", :as => "logout"
+  get "register", :to => "users#new", :as => "register"
+  
    namespace :admin do
     resources :users
     resources :articles
+    resources :sbmessages
   end
 #  match "users", :to => "User#index", :as => "users"
   # Sample resource route with options:

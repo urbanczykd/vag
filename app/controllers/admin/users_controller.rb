@@ -23,7 +23,7 @@ class Admin::UsersController < AdminController
   end
   
   def edit
-    @user = current_user
+    @user = User.find_by_username(params[:id])
   end
   
   def update
