@@ -1,6 +1,6 @@
 <div class="box">
 <% if current_user %>
-  <% form_for :sbmessage, :url => {:controller => "sbmessages", :action => "create"}, :remote => true, :'data-type' => 'script'  do |f| %>
+  <% form_for :sbmessage, :url => {:controller => "sbmessages", :action => "create"}, :remote => true, :'data-type' => 'script', :html => {:id => "form_box"}  do |f| %>
     <%= f.hidden_field :user_id, :value => current_user.id %>
   <p>
     wiadomość:<br />
