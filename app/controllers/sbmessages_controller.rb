@@ -7,7 +7,7 @@ class SbmessagesController < ApplicationController
     @sbmessage = Sbmessage.new(params[:sbmessage])
     respond_to do |format|
       if @sbmessage.save
-        flash[:notice] = "Message add."
+          @sbmessages = Sbmessage.all(:order => 'created_at DESC', :limit => 20)
           format.js{ render('create.js', :layout => false)}
       else
         redirect_to root_url
