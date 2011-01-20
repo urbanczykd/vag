@@ -5,11 +5,13 @@ class SbmessagesController < ApplicationController
   
   def create
     @sbmessage = Sbmessage.new(params[:sbmessage])
-    if @sbmessage.save
-      flash[:notice] = "Message add."
-      redirect_to root_url
-    else
-      redirect_to root_url
+    respond_to do |format|
+      if @sbmessage.save
+        flash[:notice] = "Message add."
+          format.js{ render('create.js', :layout => false)}
+      else
+        redirect_to root_url
+      end
     end
   end
   

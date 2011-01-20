@@ -11,6 +11,7 @@ class Admin::ArticlesController < AdminController
   def create
     @article = Article.new(params[:article])
     if @article.save
+       @article.move_to_top
       redirect_to admin_articles_path
     else
       redirect_to admin_articles_path

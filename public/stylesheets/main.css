@@ -189,6 +189,7 @@ float: right;
 .mainbox{
 display: block;
 margin-left: 3px;
+margin-bottom: 5px;
 background:url('/images/main/darkSilverFooter_05.gif');
 background-repeat: repeat-y;
 width: 531px;

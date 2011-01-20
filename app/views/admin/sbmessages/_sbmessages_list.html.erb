@@ -1,0 +1,20 @@
+<table>
+  <tr>
+    <th>#id</th>
+    <th>Created at</th>
+    <th>Username</th>
+    <th>Message</th>
+    <th colspan="2">Options</th>
+<% @sbmessages.each do |message| %>
+  <tr>
+  <td><%= message.id%>.</td>
+  <td><%= message.created_at.strftime("%Y-%m-%d %H:%M %S") %></td>
+  <td><%= User.find(message.user_id).username %></td>
+  <td><%= message.message %></td>
+  <td><%= link_to "Edycja", edit_admin_sbmessage_path(message)%></td>
+  <td><%= link_to "Usuń", admin_sbmessage_path(message),  :confirm =>"Na pewno usunąć ten wpis?", :method => :delete %></td>
+  </tr>
+  <% end %>
+    </tr>
+</table>
+<%= will_paginate @sbmessages %>

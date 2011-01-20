@@ -1,6 +1,7 @@
 class Admin::SbmessagesController < AdminController
   def index
-    @sbmessages = Sbmessage.all
+    @sbmessages = Sbmessage.all.paginate(:per_page => 10, :page => params[:page])
+
   end
   def new
     @sbmessage = Sbmessage.new
