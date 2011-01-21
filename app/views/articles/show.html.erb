@@ -8,8 +8,8 @@
 		<div class="mainbox_left">
 			<div class="mainbox_right">
 				<div class="mainbox_center">
-        <%= @article.head %><br />
-        <%= @article.body%>
+        <%= @article.head.html_safe %><br />
+        <%= @article.body.html_safe %>
         <div class="read_more"><%= link_to "Powrót", root_path%></div>
       </div>
 			</div>

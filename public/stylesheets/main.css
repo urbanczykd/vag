@@ -2,12 +2,13 @@ body {
 	background:url(/images/main/background.gif);
 	color: #ACADA1;
 }
-body, p, ol, td {
+body,ol, td {
 font-family: verdana, arial, helvetica, sans-serif;
 font-size:   12px;
 line-height: 18px;
 color: white;
 }
+p {margin: 0px; padding: 5px 0px;}
 .pagination {font-size: 14px;font-family: Verdana,Helvetica;}
 .pagination a{ color: #B7B9AC;}
 .pagination a:hover{color: #4985F4;}
@@ -222,6 +223,7 @@ color: #B7B9AC;
 .mainbox_right{
 padding-right: 16px;
 background:url('/images/main/darkSilverFooter_06.gif') repeat-y top right;
+
 }
 .mainbox_down{
 height: 13px;

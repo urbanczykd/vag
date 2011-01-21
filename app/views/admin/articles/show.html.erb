@@ -1,7 +1,7 @@
 <%= @article.title%><br /><br />
 
 
-        <%= @article.head %><br />
-        <%= @article.body%>
+        <%= @article.head.html_safe %><br />
+        <%= @article.body.html_safe %>
         <br /><br />
         <%= link_to "Powrót", admin_articles_path %>

@@ -9,7 +9,7 @@
 		<div class="mainbox_left">
 			<div class="mainbox_right">
 				<div class="mainbox_center">
-        <%= article.head %>
+        <%= article.head.html_safe %>
         <div class="read_more"><%= link_to "Czytaj więcej", article_path(article)%></div>
       </div>
 			</div>

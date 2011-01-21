@@ -1,2 +1,27 @@
-<%= render "form" %>
+<%= javascript 'tiny_mce/jquery.tinymce'%>
+<%= javascript 'tiny_mce/tiny_mce'%>
+
+
+
+
+<%= form_for [:admin, @article] do |f| %>
+<br />
+<p>
+<%= f.label :tytuł %>:<br />
+<%= f.text_field :title %><br />
+<%= f.label :tagi %>:<br />
+<%= f.text_field :tag %><br />
+<br /><br /><br /><br />
+<%= f.label :zajawka %>:<br />
+
+
+<%= f.text_area :head, :class => "tinymce" %><br />
+
+
+<%= f.label :treść %>:<br />
+<%= f.text_area :body, :class => "tinymce" %><br />
+<%= f.submit %>
+</p>
+
+<% end %>
 <%= link_to "Powrót", admin_articles_path %>

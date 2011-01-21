@@ -7,6 +7,7 @@ class Admin::ArticlesController < AdminController
   end
   def new
     @article = Article.new
+    @image = Image.new
   end
   def edit
     @article = Article.find(params[:id])
