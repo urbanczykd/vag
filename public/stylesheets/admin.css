@@ -14,6 +14,19 @@ table th{font-size: 14px; }
 a {color: #B7B9AC;}
 a:hover{color: red;}
 
+.gallery_box{
+  -webkit-border-radius: 10px; /* Safari, Chrome */
+  -khtml-border-radius: 10px;    /* Konqueror */
+  -moz-border-radius: 10px; /* Firefox */
+  border-radius: 20px;
+
+  margin-left: 325px;
+  z-index: 2;
+  position: absolute;
+  border:2px solid gray;
+  width: 350px;
+  
+}
 #frame {
 margin-left: auto;
 margin-right: auto;

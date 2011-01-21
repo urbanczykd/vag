@@ -22,10 +22,12 @@ Vag::Application.routes.draw do
 	match 'logout', :to => 'User_sessions#destroy', :as => 'logout'
   get 'register', :to => 'Users#new', :as => 'register'
   
-   namespace :admin do
+   namespace :admin do    
     resources :users
+    resources :images
+    resources :galleries
     resources :articles do
-    get "act(/:art_act)", :to => "Articles#act", :as => "act"
+      get "act(/:art_act)", :to => "Articles#act", :as => "act"
     end
     resources :sbmessages
   end

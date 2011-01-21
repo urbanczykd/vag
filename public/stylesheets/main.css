@@ -8,28 +8,16 @@ font-size:   12px;
 line-height: 18px;
 color: white;
 }
-#frame {
-margin-left: auto;
-margin-right: auto;
-width: 988px;
-/* border: 2px solid white; */
-}
-#baner {
-width: 988px;
-height: 335px;
-	background:url('/images/main/baner.jpg');
-	background-repeat: no-repeat;
-}
+.pagination {font-size: 14px;font-family: Verdana,Helvetica;}
+.pagination a{ color: #B7B9AC;}
+.pagination a:hover{color: #4985F4;}
+.read_more a{ display:block; text-align:right; font-family: Verdana,Helvetica; color: #B7B9AC;}
+.read_more a:hover{ color: #4985F4; text-decoration: none;}
+#frame {margin-left: auto; margin-right: auto; width: 988px;}
+#baner { width: 988px; height: 335px;	background:url('/images/main/baner.jpg');	background-repeat: no-repeat;}
 /* verical_menu */
-#vericalmenu{
-background-color: #222222;
-height: 22px;
-}
-#vericalmenu_left{
-width:24px;
-height: 22px;
-background:url('/images/main/darkSilver_16.gif');
-float:left;
+#vericalmenu{ background-color: #222222; height: 22px;}
+#vericalmenu_left{ width:24px; height: 22px; background:url('/images/main/darkSilver_16.gif');float:left;
 }
 #vericalmenu_center{
 height: 19px;
@@ -229,6 +217,7 @@ background-repeat: repeat-y;
 .mainbox_center{
 width: 499px;
 background-color: #040404;
+color: #B7B9AC;
 }
 .mainbox_right{
 padding-right: 16px;

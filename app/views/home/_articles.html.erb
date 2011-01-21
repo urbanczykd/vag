@@ -1,16 +1,16 @@
+<% @articles.each do |article| %>
   <div class="mainbox">
 		<div class="mainbox_top">
 			<div class="mainbox_top_left"></div>
-      <div class="mainbox_top_center"><%= @article.title%></div>
+      <div class="mainbox_top_center"><%= article.title%></div>
 			<div class="mainbox_top_right"></div>
 		</div>
 
 		<div class="mainbox_left">
 			<div class="mainbox_right">
 				<div class="mainbox_center">
-        <%= @article.head %><br />
-        <%= @article.body%>
-        <div class="read_more"><%= link_to "Powrót", root_path%></div>
+        <%= article.head %>
+        <div class="read_more"><%= link_to "Czytaj więcej", article_path(article)%></div>
       </div>
 			</div>
 		</div>
@@ -20,4 +20,6 @@
 			<div class="mainbox_down_center"></div>
 			<div class="mainbox_down_right"></div>
 		</div>
-  </div>  
+	</div>
+<% end %>
+<%= will_paginate @articles %>
