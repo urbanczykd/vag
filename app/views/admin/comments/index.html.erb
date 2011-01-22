@@ -1,0 +1,21 @@
+<table>
+  <tr>
+    <th>Lp</th>
+    <th>Tytuł artykułu</th>
+    <th>Nazwa użytkownika</th>
+    <th>Treść komentarza</th>
+    <th colspan="3">Options</th>
+  </tr>
+  <% @comments.each do |comment| %>
+  <tr>
+    <td><%= comment.id %></td>
+    <td><%= comment.article.title %></td>
+    <td><%= comment.user.username %></td>
+    <td><%= comment.body %></td>
+    <td><%= link_to "Pokaż", admin_comment_path(comment) %></td>
+    <td><%= link_to "Edytuj", edit_admin_comment_path(comment) %></td>
+    <td><%= link_to "Usuń", admin_comment_path(comment),:confirm => "Na pewno?", :method => "delete" %></td>
+  </tr>
+  <% end %>
+</table>
+  

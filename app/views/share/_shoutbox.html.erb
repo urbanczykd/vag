@@ -12,13 +12,15 @@
 <% end %>
 <br /><br />
 <% end %>
+<div id="shoutbox">
   <div id="shoutbox_messages">
     <% @sbmessages.each do |message| %>
-    		<div class="webmessage_username"><%= User.find(message.user_id).username %>&nbsp;:&nbsp;&nbsp;
+    		<div class="webmessage_username"><%= message.user.username %>&nbsp;:&nbsp;&nbsp;
           <div style="display:inline;color:white;"><%= message.message %></div>
         </div>
         <div class="webmessage_webmessage"></div>
     <% end %>
+  </div>
   </div>
 </div>
 

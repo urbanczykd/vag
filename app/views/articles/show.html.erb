@@ -21,3 +21,9 @@
 			<div class="mainbox_down_right"></div>
 		</div>
   </div>  
+  <% if current_user %>
+    <%= render "comments/new" %>
+  <% end %>
+  <div id="comments">
+  <%= render "comments/index"%>
+  </div>

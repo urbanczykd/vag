@@ -1,8 +1,9 @@
-<div class="box">
-<% @sbmessagesTOP.each do |toplist|%>
-	<div class="top_box_left"><%= User.find(toplist.user_id).username%>:</div>
-	<div class="top_box_right"><%= toplist.top %></div><br />
-<% end %>
+<div id="shoutbox_top">
+  <div class="box">
+    <% @sbmessagesTOP.each do |toplist|%>
+      <div class="top_box_left"><%= User.find(toplist.user_id).username%>:</div>
+      <div class="top_box_right"><%= toplist.top %></div><br />
+    <% end %>
+    </div>
 </div>
-
 

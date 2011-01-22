@@ -10,7 +10,9 @@
 			<div class="mainbox_right">
 				<div class="mainbox_center">
         <%= article.head.html_safe %>
-        <div class="read_more"><%= link_to "Czytaj więcej", article_path(article)%></div>
+          <% if !article.body.empty? %>
+            <div class="read_more"><%= link_to "Czytaj więcej", article_path(article)%></div>
+          <% end %>
       </div>
 			</div>
 		</div>

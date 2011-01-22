@@ -19,7 +19,7 @@ class ArticlesController < ApplicationController
       rescue ActiveRecord::RecordNotFound
        return render :text => "ops"
      end
-
+     @comments = Comment.all(:conditions => {:article_id => params[:article].chomp("-")[0].to_i}, :order => "created_at DESC").paginate(:per_page => 10, :page => params[:page])
      @user_session = UserSession.new
      @users_online = User.find(:all, :order => 'last_request_at DESC', :limit => 10)
      @sbmessages = Sbmessage.all(:order => 'created_at DESC', :limit => 20)

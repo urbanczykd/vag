@@ -3,6 +3,7 @@ class Article < ActiveRecord::Base
   validates :title, :presence => true
   has_many :images
   has_many :galleries
+  has_many :comments
   
   def to_param
     "#{id}-#{title.parameterize}"

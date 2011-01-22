@@ -1,0 +1,23 @@
+<% @comments.each do |comment| %>
+  <div class="mainbox">
+		<div class="mainbox_top">
+			<div class="mainbox_top_left"></div>
+      <div class="mainbox_top_center"><i>Dodany przez: <%= comment.user.username %> </i></div>
+			<div class="mainbox_top_right"></div>
+		</div>
+
+		<div class="mainbox_left">
+			<div class="mainbox_right">
+				<div class="mainbox_center">
+    <%= comment.body %>
+      </div>
+			</div>
+		</div>
+		<div class="mainbox_down">
+			<div class="mainbox_down_left"></div>
+			<div class="mainbox_down_center"></div>
+			<div class="mainbox_down_right"></div>
+		</div>
+  </div> 
+<% end %>
+<%= will_paginate @comments %>

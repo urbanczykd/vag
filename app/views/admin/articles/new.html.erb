@@ -1,9 +1,3 @@
-<%= javascript 'tiny_mce/jquery.tinymce'%>
-<%= javascript 'tiny_mce/tiny_mce'%>
-
-
-
-
 <%= form_for [:admin, @article] do |f| %>
 <br />
 <p>
@@ -15,11 +9,11 @@
 <%= f.label :zajawka %>:<br />
 
 
-<%= f.text_area :head, :class => "tinymce" %><br />
+<%= f.text_area :head, :class => "jquery_ckeditor" %><br />
 
 
 <%= f.label :treść %>:<br />
-<%= f.text_area :body, :class => "tinymce" %><br />
+<%= f.text_area :body, :class => "jquery_ckeditor" %><br />
 <%= f.submit %>
 </p>
 

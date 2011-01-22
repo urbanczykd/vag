@@ -26,6 +26,7 @@ Vag::Application.routes.draw do
     resources :users
     resources :images
     resources :galleries
+    resources :comments
     resources :articles do
       get "act(/:art_act)", :to => "Articles#act", :as => "act"
     end
@@ -68,7 +69,10 @@ Vag::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-   match ':article' => 'Articles#show', :as => 'article'
+  resources :articles do
+    resources :comments
+  end
+  match ':article' => 'Articles#show', :as => 'article' 
    root :to => "Home#index"
 
   # See how all your routes lay out with "rake routes"
