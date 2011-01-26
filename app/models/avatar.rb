@@ -1,7 +1,8 @@
 class Avatar < ActiveRecord::Base
   belongs_to :user
   
-  has_attached_file :photo, :styles => { :small => "150x150>",
+  has_attached_file :photo, :styles => { :vsmall => "70x60>",
+                                         :small => "150x150>",
                                          :thumb => "250x250>",
                                          :original => "350x350>"},
  :url  => "/avatars/:id/:style/:basename.:extension",

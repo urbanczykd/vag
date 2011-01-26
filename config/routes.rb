@@ -5,11 +5,12 @@ Vag::Application.routes.draw do
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
   # Keep in mind you can assign values other than :controller and :action
+  match 'user/:user_id' => 'Users#show', :as => 'user'
   resources :user_sessions, :only =>[:new, :create, :destroy]
-  resources :users, :only => [:index, :new, :create, :show, :edit]
 #  resources :articles, :only => [:index]
   resources :sbmessages, :only => [:new, :create]
-  match 'user/:user_id' => 'Users#show', :as => 'user'
+  resources :avatars
+  resources :users
 
   # Sample of named route:
   #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase
@@ -75,7 +76,7 @@ Vag::Application.routes.draw do
   end
   match ':article' => 'Articles#show', :as => 'article' 
    root :to => "Home#index"
-
+  
   # See how all your routes lay out with "rake routes"
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.

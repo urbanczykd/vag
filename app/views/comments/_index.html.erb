@@ -9,8 +9,10 @@
 		<div class="mainbox_left">
 			<div class="mainbox_right">
 				<div class="mainbox_center">
-    <%= comment.body %>
-      </div>
+              <%= image_tag comment.user.avatar.photo.url(:vsmall), :align => "left", :style => "margin: -20px 0px 0px 0px;"%>
+              <%= comment.body %>
+              <br /><br /><br />
+            </div>
 			</div>
 		</div>
 		<div class="mainbox_down">

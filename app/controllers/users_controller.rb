@@ -23,7 +23,8 @@ class UsersController < ApplicationController
   end
   
   def create
-    @user = User.new(params[:user], :rule_id => Rule.find(:conditions => {:name => 'User'}).id)
+    @user = User.new(params[:user])
+    @user.update_attributes(:role_id => "1")
     
     if @user.save
       flash[:notice] = "Registration successful."
@@ -34,7 +35,9 @@ class UsersController < ApplicationController
   end
   
   def edit
-    @user = current_user
+    @avatar = Avatar.new
+#    return render :text => "#{params[:id].to_yaml}"
+    @user = User.find_by_username(params[:id])
     @users_online = User.find(:all, :order => 'last_request_at DESC', :limit => 10)
     @sbmessagesTOP = Sbmessage.all(:select => 'user_id, count(message) as top', :group => "user_id", :order => "top DESC", :limit => 5)
     @sbmessages = Sbmessage.all(:order => 'created_at DESC', :limit => 20)
@@ -42,10 +45,10 @@ class UsersController < ApplicationController
   end
   
   def update
-    @user = current_user
+    @user = User.find_by_username(params[:id])
     if @user.update_attributes(params[:user])
       flash[:notice] = "Successfully updated profile."
-      redirect_to root_url
+      redirect_to edit_user_path(params[:id])
     else
       render :action => 'edit'
     end

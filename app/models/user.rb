@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
-  acts_as_authentic
-  validate :username, :uniqueness => :true
-  validate :email, :uniqueness => :true
+  acts_as_authentic 
+  validate :username, :uniqueness => :true, :on =>  :create
+  validate :email, :uniqueness => :true, :on => :create
   has_one :gallery
   has_one :avatar
   has_many :images

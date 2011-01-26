@@ -7,9 +7,9 @@
 <br />
 
 <%= form_for [:admin, @user] do |f| %>
-
+  <% if @user.avatar %>
 <%= image_tag @user.avatar.photo.url(:small)%><br />
-
+  <% end %>
 
 Login: <br />
 <%= f.text_field :username %><br />

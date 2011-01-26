@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110126103928) do
+ActiveRecord::Schema.define(:version => 20110126201029) do
 
   create_table "articles", :force => true do |t|
     t.string   "title"
@@ -100,6 +100,10 @@ ActiveRecord::Schema.define(:version => 20110126103928) do
     t.integer  "role_id",             :default => 1, :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "gg"
+    t.string   "skype"
+    t.string   "tlen"
+    t.string   "yahoo"
   end
 
 end

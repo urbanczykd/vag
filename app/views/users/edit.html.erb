@@ -8,12 +8,35 @@
 		<div class="mainbox_left">
 			<div class="mainbox_right">
 				<div class="mainbox_center">
-<%= form_for(@user) do |f| %>
+        <%= form_for(@avatar, :html => { :multipart => true }) do |f| %>
+        <%= f.hidden_field :user_id, :value => User.find(:first, :conditions => {:username => params[:id]}).id%><br />
+            <% if @user.avatar %>
+            <%= image_tag @user.avatar.photo.url(:small)%><br />
+            <% end %>
+          <%= f.file_field :photo %><br />
+          <%= f.submit "Dodaj lub zmień swój avatar"%>
+        <% end %>
+          
+          <br /><br />
+          
+<%= form_for(@user, :url =>{:controller => :users, :action => :update}) do |f| %>
     <%= f.label :username %>:<br />
     <%= f.text_field :username %>
   <p>
     <%= f.label :email %>:<br />
     <%= f.text_field :email %>
+  </p>
+  <p>
+    <%= f.label :gg %>:<br />
+    <%= f.text_field :gg %>
+  </p>
+  <p>
+    <%= f.label :skype %>:<br />
+    <%= f.text_field :skype %>
+  </p>
+  <p>
+    <%= f.label :tlen %>:<br />
+    <%= f.text_field :tlen %>
   </p>
   <p>
     <%= f.label :password %>:<br />
@@ -24,7 +47,7 @@
     <%= f.text_field :password_confirmation %>
   </p>
     
-    <%= f.submit "Aktualizuj" %>
+    <%= f.submit  %>
 <% end %>
       </div>
 			</div>
