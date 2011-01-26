@@ -1,0 +1,23 @@
+<%= form_for [:admin, @avatar], :html => { :multipart => true }  do |f| %>
+  Avatar: <br />
+  <%= f.file_field :photo %><br />
+  <%= f.hidden_field :user_id, :value => User.find(:first, :conditions => {:username => params[:id]}).id%>
+  <%= f.submit "Dodaj lub zmień avatar"%><br />
+<% end %>
+<br />
+
+<%= form_for [:admin, @user] do |f| %>
+
+<%= image_tag @user.avatar.photo.url(:small)%><br />
+
+
+Login: <br />
+<%= f.text_field :username %><br />
+e-mail:<br />
+<%= f.text_field :email %><br />
+Grupa: <br />
+
+<%= select( "user", "role_id", @roles.map {|u| [u.name,u.id]}) %><br />
+
+<%= f.submit %>
+<% end %>

@@ -24,13 +24,16 @@ class Admin::UsersController < AdminController
   
   def edit
     @user = User.find_by_username(params[:id])
+    @roles = Role.all
+    @avatar = Avatar.new
   end
   
   def update
-    @user = current_user
+#    return render :text => "params => #{params.to_yaml}"
+    @user = User.find(:first, :conditions => {:username => params[:id]})
     if @user.update_attributes(params[:user])
       flash[:notice] = "Successfully updated profile."
-      redirect_to root_url
+      redirect_to admin_users_path
     else
       render :action => 'edit'
     end

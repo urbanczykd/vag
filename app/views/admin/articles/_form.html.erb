@@ -1,6 +1,3 @@
-<%# javascript 'tiny_mce/jquery.tinymce'%>
-<%# javascript 'tiny_mce/tiny_mce'%>
-
 <%= form_for [:admin, @article] do |f| %>
 <br />
   <p>
@@ -31,11 +28,11 @@
   <% end %>
 <br />
 <p>
-Dostępne rozmiary:
-:vsmall = 100x100,
-:thumb = 150x150,
-:small = 300x300,
-:oryginal => "800x600>",
+  Dostępne rozmiary:<br />
+:vsmall = 100x100,<br />
+:thumb = 150x150,<br />
+:small = 300x300,<br />
+:oryginal => "800x600>",<br />
 </p>
 <% @images.each do |image| %>
 <p>

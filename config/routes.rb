@@ -25,6 +25,7 @@ Vag::Application.routes.draw do
    namespace :admin do    
     resources :users
     resources :images
+    resources :avatars
     resources :galleries
     resources :comments
     resources :articles do

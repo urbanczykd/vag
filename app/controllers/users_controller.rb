@@ -23,7 +23,8 @@ class UsersController < ApplicationController
   end
   
   def create
-    @user = User.new(params[:user])
+    @user = User.new(params[:user], :rule_id => Rule.find(:conditions => {:name => 'User'}).id)
+    
     if @user.save
       flash[:notice] = "Registration successful."
       redirect_to root_url
