@@ -1,8 +1,9 @@
 <% if current_user %>
 				<ul>
-				<li><%= link_to "Twój profil", user_path(current_user) %></li>
-				<li><%= link_to "Edytuj profil", edit_user_path(current_user) %></li>
-				<li><%= link_to "Logout", logout_path %></li>
+		<li><%= link_to "Twój profil", user_path(current_user) %></li>
+		<li><%= link_to "Edytuj profil", edit_user_path(current_user) %></li>
+    <li><%= link_to "Galerie samochodów", user_cargalleries_path(current_user)%></li>
+		<li><%= link_to "Logout", logout_path %></li>
 				</ul>
 <% else %>
    <%= form_for @user_session do |f| %>

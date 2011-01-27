@@ -9,7 +9,12 @@
 		<div class="mainbox_left">
 			<div class="mainbox_right">
 				<div class="mainbox_center">
-              <%= image_tag comment.user.avatar.photo.url(:vsmall), :align => "left", :style => "margin: -20px 0px 0px 0px;"%>
+        <%# if comment.user.avatar %>
+        <% if comment.user.avatar.nil? %>
+          <%= image_tag "/images/missing.png", :align => "left", :style => "margin: -20px 0px 0px 0px;"%>
+        <% else %>
+          <%= image_tag comment.user.avatar.photo.url(:vsmall), :align => "left", :style => "margin: -20px 0px 0px 0px;"%>
+        <% end %>
               <%= comment.body %>
               <br /><br /><br />
             </div>

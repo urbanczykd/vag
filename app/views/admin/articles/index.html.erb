@@ -17,7 +17,7 @@
         <%= link_to("Down", article_act_path(article, "down"))%></td>
     <td><%= link_to "Pokaż", admin_article_path(article)%></td>
     <td><%= link_to "Edytuj", edit_admin_article_path(article)%></td>
-    <td><%= link_to "Usuń", admin_article_path(article), :method => :delete, :confirm => "Na pewno usunąć ten artykuł?"%></td>
+    <td><%= link_to "Usuń", admin_article_path(article), :method => :delete, :confirm => "Na pewno usunąć ten artykuł?" %></td>
   </tr>
   <% end %>
 </table>

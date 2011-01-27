@@ -8,11 +8,16 @@
 		<div class="mainbox_left">
 			<div class="mainbox_right">
 				<div class="mainbox_center">
+          <p>
+          <%= link_to "Galeria samochodu", user_cargalleries_path(current_user)%>
+          </p>
         <%= form_for(@avatar, :html => { :multipart => true }) do |f| %>
         <%= f.hidden_field :user_id, :value => User.find(:first, :conditions => {:username => params[:id]}).id%><br />
-            <% if @user.avatar %>
-            <%= image_tag @user.avatar.photo.url(:small)%><br />
-            <% end %>
+        <% if @user.avatar.nil? %>
+        <%= image_tag "/images/missing.png"%><br />
+       <% else %>
+      <%= image_tag @user.avatar.photo.url(:small)%><br />
+       <% end %>
           <%= f.file_field :photo %><br />
           <%= f.submit "Dodaj lub zmień swój avatar"%>
         <% end %>
@@ -20,6 +25,7 @@
           <br /><br />
           
 <%= form_for(@user, :url =>{:controller => :users, :action => :update}) do |f| %>
+
     <%= f.label :username %>:<br />
     <%= f.text_field :username %>
   <p>
@@ -37,6 +43,10 @@
   <p>
     <%= f.label :tlen %>:<br />
     <%= f.text_field :tlen %>
+  </p>
+  <p>
+    <%= f.label :yahoo %>:<br />
+    <%= f.text_field :yahoo %>
   </p>
   <p>
     <%= f.label :password %>:<br />

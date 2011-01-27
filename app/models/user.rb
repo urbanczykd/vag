@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
   validate :username, :uniqueness => :true, :on =>  :create
   validate :email, :uniqueness => :true, :on => :create
   has_one :gallery
+  has_one :cargallery
   has_one :avatar
   has_many :images
   has_many :comments

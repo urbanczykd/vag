@@ -1,0 +1,40 @@
+  <div class="mainbox">
+		<div class="mainbox_top">
+			<div class="mainbox_top_left"></div>
+      <div class="mainbox_top_center"><i>Galeria samochodu</i></div>
+			<div class="mainbox_top_right"></div>
+		</div>
+
+		<div class="mainbox_left">
+			<div class="mainbox_right">
+				<div class="mainbox_center">
+        <table>
+          <tr>
+           <th>Lp</th>
+           <th>Nazwa</th>
+            <th colspan="3">Options</th>
+          </tr>
+          <% @cargalleries.each do |cargallery|%>          
+          <tr>
+            <td>#</td>
+            <td><%= cargallery.name %></td>
+            <td><%= link_to "Pokaż", user_cargallery_path(current_user.username, cargallery) %></td>
+            <td><%= link_to "Edytuj", edit_user_cargallery_path(current_user.username, cargallery) %></td>
+            <td><%= link_to "Usuń", user_cargallery_path(current_user.username, cargallery), :method => :delete, :confirm => "tak?" %></td>
+          </tr>
+          <% end %>
+        </table>
+<div class="read_more">
+        <%= link_to "Dodaj Galerię samochodu", new_user_cargallery_path(current_user.username)%>
+</div>
+         <div class="read_more"><%= link_to "Powrót", edit_user_path(current_user)%></div>
+      </div>
+			</div>
+		</div>
+
+		<div class="mainbox_down">
+			<div class="mainbox_down_left"></div>
+			<div class="mainbox_down_center"></div>
+			<div class="mainbox_down_right"></div>
+		</div>
+  </div>  

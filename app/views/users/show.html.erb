@@ -8,13 +8,25 @@
 		<div class="mainbox_left">
 			<div class="mainbox_right">
 				<div class="mainbox_center">
-
-  <%= @user.username %><br />
-  <%= @user.email%><br />
-  <%= @user.gg %><br />
-  <%= @user.skype%><br />
-  <%= @user.tlen %><br />
-  <%= @user.yahoo%><br />
+        <% if @user.avatar.nil? %>
+        <%= image_tag "/images/missing.png", :align => "left", :style => "margin: -20px 0px 0px 0px;"%>
+       <% else %>
+      <%= image_tag @user.avatar.photo.url(:small), :align => "left", :style => "margin: -20px 0px 0px 0px; padding: 0px 20px 0px 0px;"%><br />
+       <% end %>
+Login:  <%= @user.username %><br />
+Email:  <%= @user.email%><br />
+<p style="line-height:25px;">
+<%= image_tag "/images/gg25.png",:align =>"left" %><%= @user.gg %><br />
+</p>
+<p style="line-height:25px;">
+<%= image_tag "/images/skype25.png",:align =>"left" %><%= @user.skype%><br />
+</p>
+<p style="line-height:25px;">
+<%= image_tag "/images/tlen25.png",:align =>"left" %><%= @user.tlen %><br />
+</p>
+<p style="line-height:25px;">
+<%= image_tag "/images/yahoo25.png",:align =>"left" %><%= @user.yahoo%><br />
+</p>
       </div>
 			</div>
 		</div>

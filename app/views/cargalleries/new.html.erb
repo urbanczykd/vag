@@ -1,0 +1,27 @@
+  <div class="mainbox">
+		<div class="mainbox_top">
+			<div class="mainbox_top_left"></div>
+      <div class="mainbox_top_center"><i>Galeria samochodu</i></div>
+			<div class="mainbox_top_right"></div>
+		</div>
+
+		<div class="mainbox_left">
+			<div class="mainbox_right">
+				<div class="mainbox_center">
+ <%= form_for([@user, @cargallery], :html => { :multipart => true }) do |f| %>
+  <%= f.text_field :user_id, :value => User.find_by_username(params[:user_id]).id%>
+Nazwa:  <%= f.text_field :name %>
+  <%= f.submit "Dodaj Galerię"%>
+ <% end %>
+
+        <div class="read_more"><%= link_to "Powrót", user_cargalleries_path(current_user)%></div>
+      </div>
+			</div>
+		</div>
+
+		<div class="mainbox_down">
+			<div class="mainbox_down_left"></div>
+			<div class="mainbox_down_center"></div>
+			<div class="mainbox_down_right"></div>
+		</div>
+  </div>  

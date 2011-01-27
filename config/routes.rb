@@ -10,7 +10,11 @@ Vag::Application.routes.draw do
 #  resources :articles, :only => [:index]
   resources :sbmessages, :only => [:new, :create]
   resources :avatars
-  resources :users
+  resources :users do
+    resources :cargalleries do
+      resources :carimages
+    end
+  end
 
   # Sample of named route:
   #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase

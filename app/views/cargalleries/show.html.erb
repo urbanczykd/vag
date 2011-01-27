@@ -1,0 +1,34 @@
+  <div class="mainbox">
+		<div class="mainbox_top">
+			<div class="mainbox_top_left"></div>
+      <div class="mainbox_top_center"><i>Galeria samochodu</i></div>
+			<div class="mainbox_top_right"></div>
+		</div>
+
+		<div class="mainbox_left">
+			<div class="mainbox_right">
+				<div class="mainbox_center">
+<%= form_for([@user, @cargallery, @carimage], :html => { :multipart => true }) do |f| %>
+  <%= f.hidden_field :user_id, :value => current_user.id%>
+<%= f.hidden_field :cargallery_id, :value => params[:id]%>
+<%= f.file_field :photo %><br />
+  <%= f.submit "Dodaj zdjęcie"%>
+<% end %>
+<% @carimages.each do |carimage| %>
+  <div>
+    <%= image_tag carimage.photo.url(:vsmall)%><br />
+    <%= link_to "Usuń", user_cargallery_carimage_path(params[:user_id], params[:id], carimage.id), :method => :delete, :confirm => "tak ?"%>
+  </div>
+  <% end %>
+
+<div class="read_more"><%= link_to "Powrót", user_cargalleries_path(current_user)%></div>
+      </div>
+			</div>
+		</div>
+
+		<div class="mainbox_down">
+			<div class="mainbox_down_left"></div>
+			<div class="mainbox_down_center"></div>
+			<div class="mainbox_down_right"></div>
+		</div>
+  </div>  

@@ -1,0 +1,2 @@
+module CargalleriesHelper
+end
